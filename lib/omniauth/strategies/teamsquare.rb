@@ -17,17 +17,14 @@ module OmniAuth
 
       info do
         {
-          'email' => user_data['email'],
-          'name' => user_data['name'],
-          'image' => user_data['image']
+          'email' => user_data['email']
         }
       end
 
       def user_data
         access_token.options[:mode] = :query
-        user_data ||= access_token.get('/1/me').parsed
+        user_data ||= access_token.get('/api/v1/me').parsed
       end
-
     end
   end
 end
