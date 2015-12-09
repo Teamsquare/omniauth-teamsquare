@@ -17,7 +17,7 @@ module OmniAuth
 
       info do
         {
-          'email' => user_data['email']
+          :email => user_data['email']
         }
       end
 
